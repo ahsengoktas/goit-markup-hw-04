@@ -12,6 +12,9 @@ header{
     background-color: white;
     
 }
+ul {
+    list-style-type: none;
+}
 .header-container{
     display: flex;
     justify-content: space-between;
@@ -25,9 +28,7 @@ header{
     gap:76px;
 }
 
-ul{
-    list-style-type: none;
-}
+
 .container {
     width: 1440px;
     margin: 0 auto;
@@ -66,8 +67,8 @@ color:#2E2F42;
     font-size: 16px;
     letter-spacing: 0.02em;
     line-height: 1.5;
-    
-    
+    padding-bottom:20px;
+    position: relative;  
 }
 .nav a:hover{
    color: #404BBF;
@@ -105,7 +106,24 @@ gap: 40px;
         align-items: center;
         gap: 48px;
         padding: 188px 472px;
+        background-image: url(/images/people-office\ 1.jpg);
+        background-size: 1440px 600px;
+        background-repeat: no-repeat;
+        box-sizing: border-box;
+        position: relative;
 }
+.main-page::before{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity:0.7;
+    background-color: #2E2F42;
+    z-index: 0;
+}
+
 .page-title{
     color:white;
     font-weight:700;
@@ -114,6 +132,8 @@ gap: 40px;
     letter-spacing: 0.02em;
     width: 496px;
     height: 120px;
+    z-index: 1;
+    position: relative;
 }
     
 .btn{
@@ -121,6 +141,11 @@ gap: 40px;
     width: 169px; 
     height: 56px;
     cursor: pointer;
+    z-index: 1;
+    position: relative;
+    transition-property: background-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
 }
 .btn:hover{
     background-color:#404BBF;
@@ -137,6 +162,21 @@ gap: 40px;
         align-items: center;
         padding:120px 156px;
         gap: 24px;
+
+    }
+    .icon-container{
+        width           : 264px;
+        height          : 112px;
+        border          : 1px solid #8e8f99;
+        background-color: #f4f4fd;
+        display         : flex;
+        align-items     : center;
+        justify-content : center;
+        margin-bottom   : 8px;
+    }
+    .values-icon{
+        width: 64px;
+    height: 64px;
     }
 .values-list > li > h3{
     color:#2E2F42;
@@ -165,6 +205,37 @@ gap: 40px;
 .our-team{
     background-color: #F4F4FD;
 }
+.social-icon{
+        width: 16px;
+        height: 16px;
+        
+}
+.social-container{
+    display: flex;
+    gap:24px;
+    padding-left: 16px;
+    padding-right: 16px;
+    
+}
+.social-container >li,
+.finish-social-container > li {
+    width: 40px;
+        height: 40px;
+        background-color: #4d5ae5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        cursor: pointer;
+        transition-property: background-color;
+        transition-duration: 250ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        
+    }
+    .social-container>li:hover,
+    .finish-social-container>li:hover {
+            background-color: #31d0aa;
+        }
 
 .our-team h2,
 .our-portfolio h2{
@@ -175,11 +246,43 @@ gap: 40px;
     letter-spacing:0.02em;
     padding-bottom: 72px;
 }
+.portfolio-container{
+    position                  : absolute;
+    background-color          : #4D5AE5;
+    height                    : 300px ;
+    color                     : #F4F4FD;
+    font-size                 : 16px;
+    letter-spacing            : 0.02em;
+    line-height               : 1.333;
+    box-sizing                : border-box;
+    padding-left              : 32px;
+    padding-top               : 40px;
+    opacity                   : 0;
+    transition-property       : opacity;
+    transition-duration       : 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    top: 0;
+    left: 0;
+}
+
 .team{
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
     gap:24px;
+
 }
+.team > li {
+background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding-bottom: 32px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08);
+}
+
 .portfolio-list{
     display: flex;
     flex-direction: row;
@@ -190,8 +293,25 @@ gap: 40px;
 .portfolio-list >li{
     width: 360px;
     height: 420px;
-    border: 1px solid #e7e9fc;;
+    box-sizing: border-box;
+        flex-direction: column;
+        border-bottom: 1px solid #e7e9fc;
+        border-left: 1px solid #e7e9fc;
+        border-right: 1px solid #e7e9fc;
+        cursor: pointer;
+        position: relative;
+        transition-property: box-shadow;
+        transition-duration: 250ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        
     
+}
+.portfolio-list > li:hover{
+    box-shadow: 0px 1px 1px #2e2f42;
+}
+.portfolio-list > li:hover .portfolio-container{
+    opacity: 1;
 }
 .team >li > h3,
 .portfolio-list > li > h3{
@@ -217,7 +337,7 @@ gap: 40px;
     align-items: center;
     
     width: 264px;
-    height: 380px;
+    height: 428px;
 }
 .name{
     padding: 32px 16px;
@@ -244,7 +364,10 @@ gap: 40px;
     background-color: #2E2F42;
     height: 312px;
     padding: 100px 156px ;
-
+display: flex;
+flex-direction: row;
+gap: 120px;
+    
 
 }
 .finish > .logo{
@@ -271,6 +394,18 @@ gap: 40px;
     line-height:1.5;
     letter-spacing:0.02em;
 }
+.finish-social-container{
+    display: flex;
+    gap:16px;
+    justify-content: center;
+    align-items: center;
+    
+}
+.finish-social{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
 
 .last{
     width: 264px;
@@ -279,3 +414,4 @@ gap: 40px;
 .last p{
     padding-top: 16px;
 }
+
