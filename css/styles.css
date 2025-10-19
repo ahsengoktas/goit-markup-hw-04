@@ -232,7 +232,9 @@ gap: 40px;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         
     }
-    .social-container>li:hover,
+    .social-container>li:hover{
+        background-color:#404BBF;
+    }
     .finish-social-container>li:hover {
             background-color: #31d0aa;
         }
@@ -305,10 +307,12 @@ background-color: white;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
         
+        
     
 }
 .portfolio-list > li:hover{
-    box-shadow: 0px 1px 1px #2e2f42;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+            0px 1px 1px rgba(46, 47, 66, 0.16);
 }
 .portfolio-list > li:hover .portfolio-container{
     opacity: 1;
